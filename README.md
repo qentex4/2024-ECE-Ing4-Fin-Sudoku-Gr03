@@ -2,6 +2,8 @@ Bienvenue sur le dépôt du TP Sudoku.....
 
 ## Présentation des solvers
 
+Listez ici la documentation qui accompagne vos solvers.
+
 ### [Solvers LinqToZ3](Sudoku.LinqToZ3/README.md)
 
 ## Instructions
