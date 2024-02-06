@@ -15,7 +15,7 @@ public sealed partial class Solver
 	{
 		Puzzle = puzzle;
 		Actions = [];
-
+	
 		_techniques = InitSolverTechniques();
 	}
 	public static Solver CreateCustomPuzzle()
