@@ -21,7 +21,7 @@ public sealed class Puzzle
 
 	public Cell this[int col, int row] => _board[Utils.CellIndex(col, row)];
 
-	private Puzzle(int[][] board, bool isCustom)
+	public Puzzle(int[][] board, bool isCustom)
 	{
 		IsCustom = isCustom;
 
@@ -148,7 +148,7 @@ public sealed class Puzzle
 		return new Puzzle(board, false);
 	}
 
-	public void Reset()
+    public void Reset()
 	{
 		for (int i = 0; i < 81; i++)
 		{
