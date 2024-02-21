@@ -47,7 +47,7 @@ public sealed partial class Solver
 			if (CheckForNakedSinglesOrCompletion(out bool changed))
 			{
 				LogAction("Solver completed the puzzle");
-				return true;
+                return true;
 			}
 			if (changed)
 			{
