@@ -1,5 +1,5 @@
+using Sudoku.Backtracking;
 using Sudoku.Shared;
-
 namespace Sudoku.ResolutionTechniquesHumaines
 {
     public class ResolutionTechniquesHumaines : ISudokuSolver
@@ -44,17 +44,6 @@ namespace Sudoku.ResolutionTechniquesHumaines
                 }
             }
 
-            // Afficher le Sudoku résolu en inversant lignes et colonnes
-            Console.WriteLine("Sudoku résolu :");
-            for (int col = 0; col < 9; col++)
-            {
-                for (int row = 0; row < 9; row++)
-                {
-                    Console.Write(solvedSudokuArray[row][col] + " ");
-                }
-                Console.WriteLine();
-            }
-
             // Convertir int[][] en SudokuGrid avec inversion des lignes et des colonnes
             SudokuGrid solvedSudokuGrid = new SudokuGrid();
             for (int row = 0; row < 9; row++)
@@ -65,8 +54,27 @@ namespace Sudoku.ResolutionTechniquesHumaines
                 }
             }
 
-
             s = solvedSudokuGrid;
+            int a = 0;
+
+            //check if value is equal to 0
+            for (int r = 0; r < 9; r++)
+                for (int c = 0; c < 9; c++)
+                    if (s.Cells[r][c] == 0) a++;
+
+
+            if (a == 0)
+            {
+                Console.WriteLine("Sudoku résolu sans backtracking :");
+                return s;
+            }
+            else
+            {
+                BacktrackingDotNetSolver IATest = new();
+                IATest.Solve(s);
+                Console.WriteLine("Sudoku résolu avec backtracking :");
+            }
+
 
             return s;
         }
